@@ -1,0 +1,15 @@
+[package]
+name = "cuda_bench"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+cust = { path = "Rust-CUDA/crates/cust" }
+rustacuda = "0.1"
+rustacuda_core = "0.1"
+rustacuda_derive = "0.1"
+ocl = "0.19.7"
+rand = "0.8" 
+csv = "1.3.1"
+

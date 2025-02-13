@@ -27,10 +27,3 @@ This notebook implements a U-Net neural network in PyTorch for image segmentatio
 - Visualization of predictions and comparison with ground truth labels.
 
 This project highlights my skills in Deep Learning, convolutional networks, and model implementation in PyTorch.
-
-## Installation and Usage
-
-### Matrix Multiplication on GPU
-1. Install Rust dependencies:
-   ```sh```
-   cargo install rustacuda

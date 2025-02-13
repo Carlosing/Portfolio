@@ -1,29 +1,24 @@
-# Project Portfolio
+# CUDA Matrix Multiplication Benchmark
 
-This repository contains two key projects showcasing my skills in code development and optimization using Rust and Python for Machine Learning and High-Performance Computing tasks.
+This repository contains a Rust implementation of matrix multiplication using CUDA for GPU acceleration. The project benchmarks the performance of matrix multiplication on the GPU, measuring memory transfer times, computation times, and FLOP/s (Floating Point Operations per Second). The results are saved in a CSV file for further analysis.
 
-## Projects
+## Overview
 
-### 1. Matrix Multiplication on GPU with Rust
-**File:** `main.rs`
+The project consists of two main components:
 
-This project implements an optimized solution for matrix multiplication using the GPU with Rust and the `rustacuda` library. Key features include:
+1. **CUDA Matrix Multiplication**: A Rust function that performs matrix multiplication on the GPU using CUDA. The function initializes CUDA, allocates memory on the GPU, transfers data between the CPU and GPU, and executes the matrix multiplication kernel.
 
-- GPU buffer initialization and management.
-- Loading and executing a CUDA kernel for matrix multiplication.
-- Measuring memory transfer times and kernel execution time.
-- Automatic benchmarking with matrices of varying sizes and generating results in CSV format.
+2. **Benchmarking**: A benchmarking function that measures the performance of the matrix multiplication for various matrix sizes. The benchmark records memory transfer times, computation times, and FLOP/s, and writes the results to a CSV file.
 
-This project demonstrates my ability to work with GPU computing, code optimization, and performance measurement.
+## Key Features
 
-### 2. Image Segmentation with U-Net in PyTorch
-**File:** `U_net.ipynb`
+- **CUDA Integration**: The project uses the `rustacuda` crate to interface with CUDA, allowing for efficient GPU computation.
+- **Random Matrix Generation**: Matrices are filled with random floating-point numbers between 0 and 100 to simulate real-world data.
+- **Performance Metrics**: The benchmark captures memory transfer times, computation times, and FLOP/s, providing a comprehensive view of GPU performance.
+- **CSV Output**: Results are saved in a CSV file (`benchmark_results.csv`), making it easy to analyze and visualize the data.
 
-This notebook implements a U-Net neural network in PyTorch for image segmentation. It includes:
+## Usage
 
-- Definition of the U-Net model with convolutional, pooling, and upsampling layers.
-- Training on an image segmentation dataset.
-- Model evaluation using performance metrics.
-- Visualization of predictions and comparison with ground truth labels.
+To run the benchmark, ensure you have CUDA installed on your system and the necessary Rust toolchain. Then, clone the repository and run the following command:
 
-This project highlights my skills in Deep Learning, convolutional networks, and model implementation in PyTorch.
+``` bash cargo run --release ```

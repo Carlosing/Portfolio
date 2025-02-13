@@ -52,6 +52,4 @@ Run the cells sequentially to preprocess the dataset, train the model, and visua
 └── README.md              # Documentation
 ```
 
-## Contact
-If you have any questions or suggestions, feel free to reach out. This repository is a demonstration of skills in GPU programming and deep learning, aimed at potential employers.
 

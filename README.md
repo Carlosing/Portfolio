@@ -1,61 +1,57 @@
-# CUDA Matrix Multiplication Benchmark
+# GPU Matrix Multiplication and U-Net Implementation
 
-This repository contains a Rust implementation of matrix multiplication using CUDA for GPU acceleration. The project benchmarks the performance of matrix multiplication on the GPU, measuring memory transfer times, computation times, and FLOP/s (Floating Point Operations per Second).
+This repository showcases two main projects demonstrating proficiency in Rust and Python for high-performance computing and deep learning. These projects serve as a portfolio for job applications in software development, particularly in GPU programming and machine learning.
 
-## Overview
+## Projects
 
-The project consists of two main components:
+### 1. GPU-Accelerated Matrix Multiplication (Rust + CUDA)
+This project implements matrix multiplication on the GPU using Rust and CUDA. The program initializes CUDA, allocates memory on the device, and performs matrix multiplication using a custom CUDA kernel. It also benchmarks the performance of different matrix sizes, measuring memory transfer time, computation time, and floating-point operations per second (FLOP/s). The benchmarking results are saved in a CSV file for further analysis.
 
-1. **CUDA Matrix Multiplication**: A Rust function that performs matrix multiplication on the GPU using CUDA. The function initializes CUDA, allocates memory on the GPU, transfers data between the CPU and GPU, and executes the matrix multiplication kernel.
+#### Features:
+- Utilizes `rustacuda` for seamless CUDA integration in Rust.
+- Implements optimized GPU-accelerated matrix multiplication.
+- Measures and records key performance metrics such as memory transfer time, computation time, and FLOP/s.
+- Saves benchmarking results in a structured CSV format for analysis.
 
-2. **Benchmarking**: A benchmarking function that measures the performance of the matrix multiplication for various matrix sizes. The benchmark records memory transfer times, computation times, and FLOP/s, and writes the results to a CSV file.
-
-## Key Features
-
-- **CUDA Integration**: The project uses the `rustacuda` crate to interface with CUDA, allowing for efficient GPU computation.
-- **Random Matrix Generation**: Matrices are filled with random floating-point numbers between 0 and 100 to simulate real-world data.
-- **Performance Metrics**: The benchmark captures memory transfer times, computation times, and FLOP/s, providing a comprehensive view of GPU performance.
-- **CSV Output**: Results are saved in a CSV file (`benchmark_results.csv`), making it easy to analyze and visualize the data.
-
-## Usage
-
-To run the benchmark, ensure you have CUDA installed on your system and the necessary Rust toolchain. Then, clone the repository and run the following command:
-
-```bash
+#### Usage:
+To compile and run the Rust program:
+```
 cargo run --release
 ```
+This will execute the benchmarking tests and generate a CSV file with results.
 
-This will execute the benchmark for a set of predefined matrix sizes and save the results to `benchmark_results.csv`.
+---
 
-## Matrix Sizes
+### 2. U-Net Implementation (Jupyter Notebook, Python)
+This project implements a U-Net model, a convolutional neural network architecture widely used for image segmentation tasks. The Jupyter Notebook guides users through the entire workflow, from data preprocessing and augmentation to model training and evaluation. The U-Net model is designed to segment images effectively by capturing both spatial and contextual information through its encoder-decoder structure.
 
-The benchmark tests both square and rectangular matrices:
+#### Features:
+- Implements U-Net architecture for high-accuracy image segmentation.
+- Performs data preprocessing, including resizing, normalization, and augmentation.
+- Trains the model using TensorFlow/Keras with visualization of results.
+- Evaluates the model performance and provides qualitative insights through segmented image outputs.
 
-- **Square Matrices**: Sizes include 2x2, 8x8, 16x16, 32x32, 64x64, 128x128, 512x512, and 1024x1024.
-- **Rectangular Matrices**: Sizes include (2x8), (8x16), (16x32), (32x64), (64x128), (128x512), and (512x1024).
+#### Usage:
+Open the Jupyter Notebook:
+```
+jupyter notebook U_net.ipynb
+```
+Run the cells sequentially to preprocess the dataset, train the model, and visualize the results.
 
-## Results
+---
 
-The benchmark results include the following metrics for each matrix size:
+## Repository Structure
+```
+/
+├── src/                   # Rust source code for GPU Matrix Multiplication
+│   ├── main.rs            # Main Rust program
+│   ├── resources/         # Contains CUDA PTX file for matrix multiplication
+├── U_net.ipynb            # Jupyter Notebook with U-Net implementation
+├── Cargo.toml             # Rust project dependencies
+├── benchmark_results.csv  # Output from Rust benchmarking
+└── README.md              # Documentation
+```
 
-- **Memory Usage (MB)**: The theoretical memory usage for the matrices.
-- **Average Memory Transfer Time (s)**: The average time taken to transfer data between the CPU and GPU.
-- **Average Computation Time (s)**: The average time taken for the GPU to perform the matrix multiplication.
-- **Average Execution Time (s)**: The total time taken for each benchmark sample.
-- **FLOP/s**: The number of floating-point operations per second achieved by the GPU.
-
-## Dependencies
-
-- **rustacuda**: A Rust crate for CUDA programming.
-- **rand**: A Rust crate for generating random numbers.
-- **csv**: A Rust crate for writing CSV files.
-
-## Future Work
-
-- **Optimization**: Explore further optimizations for the CUDA kernel to improve performance.
-- **Larger Matrices**: Extend the benchmark to include larger matrix sizes.
-- **Visualization**: Create visualizations of the benchmark results using tools like Python's Matplotlib or Seaborn.
--  **Compare sparse vs dense matrices**
--  **Implement Strassens method**: Implement efficient multiplication parallelized algorithm.
--  **Compare with cuBLAS**
+## Contact
+If you have any questions or suggestions, feel free to reach out. This repository is a demonstration of skills in GPU programming and deep learning, aimed at potential employers.
 
